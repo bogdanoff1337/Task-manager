@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('app');
 });
+
+Route::get('/auth/google', [LoginController::class, 'redirectToProvider']);
+Route::get('/auth/google/call-back', [LoginController::class, 'handleGoogleCallback']);
+Route::get('/auth/google/logout', [LoginController::class, 'logout']);
