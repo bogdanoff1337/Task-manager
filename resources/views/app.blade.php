@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="app">
-            <theme-toggle></theme-toggle>
+            
           </div>
           
     </body>

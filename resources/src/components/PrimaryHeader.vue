@@ -4,7 +4,7 @@
 			<li class="neon-link">
 				<router-link				
 					class="nav-link custom-link"
-					to="/Home"
+					to="/"
 					>Home
 				</router-link>
 			</li>
@@ -47,16 +47,13 @@
 	justify-content: center;
 }
 .custom-link.active {
-  /* Власні стилі для активного посилання */
-  background-color: transparent; /* Забираємо фоновий колір (як для кнопки) */
-  border: none; /* Забираємо межі (як для кнопки) */
-  color: inherit; /* Зберігаємо колір тексту */
- 
+  background-color: transparent; 
+  border: none; 
+  color: inherit; 
+  color:antiquewhite;
 }
-	
-/* Стилі для посилання з класом "neon-link" */
 .neon-link {
-  color: #39ff14; /* Neon Green */
+  color: #39ff14; 
   text-decoration: none;
   position: relative;
   padding: 2px 2px;
@@ -89,7 +86,7 @@
 
 .neon-link:hover {
   background: rgba(57, 255, 20, 0.1);
-  transition: all 0.1s ease-out;
+  transition: all 0.5s ease-out;
   padding: 2px 8px;
 }
 

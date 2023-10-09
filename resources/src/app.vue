@@ -1,24 +1,16 @@
 <template>
   <div>
+    <div class="background">
+        <div id="app">
+    </div>
     <PrimaryHeader v-if="isLoggedIn" />
     <main class="main">
       <router-view />
     </main>
-
-    <div class="container">
-      <div class="container__menu">
-      <h1>Hi! {{ userName }}</h1>
-      <button v-if="isLoggedIn" class="neon-button" @click="logout">Вийти</button>
-      <button v-if="!isLoggedIn" class="neon-button"><a   href="/auth/google">Авторизуватися за допомогою Google</a></button>
-    </div>
-    
-      <h3><p>
-        This is the main page of the Task Manager website. Here, you can create, edit, and delete tasks
-      </p></h3>
-     
-      
-    </div>
+ 
+      </div>
   </div>
+  
 </template>
 
 <script lang="ts">
@@ -78,6 +70,12 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  background-color: #1a1a1a;
+}
 
 .container {
   display: flex;
