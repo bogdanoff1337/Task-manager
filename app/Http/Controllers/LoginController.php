@@ -9,10 +9,15 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
 
-    public function index()
+    public function getUserName()
     {
-        $userName = Auth::user()->name;
-        return response()->json(['userName' => $userName]);
+        // Перевірка, чи користувач аутентифікований
+        if (Auth::check()) {
+            $userName = Auth::user()->name;
+            return response()->json(['userName' => $userName, 'isLoggedIn' => true]);
+        } else {
+            return response()->json(['userName' => '', 'isLoggedIn' => false]);
+        }
     }
 
 

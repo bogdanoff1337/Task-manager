@@ -13,10 +13,11 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-});
+
 
 Route::get('/auth/google', [LoginController::class, 'redirectToProvider']);
 Route::get('/auth/google/call-back', [LoginController::class, 'handleGoogleCallback']);
 Route::get('/auth/google/logout', [LoginController::class, 'logout']);
+Route::get('/api/getUserName', [LoginController::class, 'getUserName']);
+
+Route::get('{any?}', fn () => view('app'))->where('any', '.*');
